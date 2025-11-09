@@ -1,0 +1,57 @@
+Based on the current state of the orchestration, decide the next action.
+
+Current State:
+- Original Request: {user_request}
+- Execution History: {execution_history}
+- Pending Tasks: {pending_tasks}
+- Completed Tasks: {completed_tasks}
+- Available Agents: {available_agents}
+
+Your Task:
+Analyze the current state and decide what to do next. Respond using the following format:
+
+REASONING:
+[Explain your thought process. What has been done? What still needs to be done? What dependencies exist?]
+
+ACTION:
+[Choose ONE of: call_agent, wait, complete]
+
+If ACTION is "call_agent":
+AGENT: [agent name]
+TOOL: [tool name]
+INPUT: [JSON object with input parameters]
+
+If ACTION is "wait":
+REASON: [Why are we waiting? What are we waiting for?]
+
+If ACTION is "complete":
+SUMMARY: [Brief summary of what was accomplished]
+
+Example 1 - Calling an agent:
+REASONING:
+The user wants to analyze logs and generate a report. First, I need to ensure the logs are sanitized to remove any PII. I'll start by calling the log_analyzer, which is intelligent enough to call the sanitizer if needed.
+
+ACTION: call_agent
+AGENT: log_analyzer
+TOOL: analyze_logs
+INPUT: {"logs_file": "sample_logs.json"}
+
+Example 2 - Waiting:
+REASONING:
+I've called the log_analyzer, which is currently processing. The analyzer may call the sanitizer on its own. I should wait for the results before proceeding to report generation.
+
+ACTION: wait
+REASON: Waiting for log_analyzer to complete analysis
+
+Example 3 - Completing:
+REASONING:
+All agents have completed their work:
+1. Data Sanitizer removed PII from logs
+2. Log Analyzer analyzed sanitized logs and found 3 errors
+3. Report Generator created summary and visualization
+The task is complete.
+
+ACTION: complete
+SUMMARY: Successfully generated intelligence brief with sanitized log analysis and visual report
+
+Now analyze the current state and provide your decision:

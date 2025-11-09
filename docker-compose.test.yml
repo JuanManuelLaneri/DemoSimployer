@@ -1,0 +1,34 @@
+version: '3.8'
+
+# Docker Compose for Testing
+#
+# This file provides RabbitMQ for running integration tests on Windows.
+# On Linux/Mac, testcontainers will start RabbitMQ automatically.
+#
+# Usage on Windows:
+#   1. Start RabbitMQ: docker-compose -f docker-compose.test.yml up -d
+#   2. Set environment: $env:RABBITMQ_HOST="localhost" (PowerShell)
+#   3. Run tests: pytest tests/integration/ -v
+#   4. Stop RabbitMQ: docker-compose -f docker-compose.test.yml down
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: chimera-test-rabbitmq
+    ports:
+      - "5672:5672"    # AMQP port
+      - "15672:15672"  # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - rabbitmq-test-data:/var/lib/rabbitmq
+
+volumes:
+  rabbitmq-test-data:
+    name: chimera-test-rabbitmq-data

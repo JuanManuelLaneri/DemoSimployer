@@ -1,0 +1,7 @@
+# Data Sanitizer Agent Requirements
+# Inherits from shared requirements
+
+-r ../shared/requirements.txt
+
+# Additional sanitizer-specific dependencies (if needed)
+# None required - using regex for PII detection

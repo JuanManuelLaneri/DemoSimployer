@@ -1,0 +1,7 @@
+# Report Generator Agent Requirements
+# Inherits from shared requirements
+
+-r ../shared/requirements.txt
+
+# Additional generator-specific dependencies
+matplotlib>=3.8.0  # For visualization generation
