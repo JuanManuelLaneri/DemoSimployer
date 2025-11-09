@@ -1,0 +1,2189 @@
+[
+  {
+    "timestamp": "2025-01-08T00:05:12.456Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Health check endpoint called from 192.168.1.10",
+    "metadata": {
+      "request_id": "req-001",
+      "endpoint": "/health",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 5
+    }
+  },
+  {
+    "timestamp": "2025-01-08T00:12:23.789Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for alice.johnson@example.com from 10.0.1.50",
+    "metadata": {
+      "request_id": "req-002",
+      "user_email": "alice.johnson@example.com",
+      "source_ip": "10.0.1.50",
+      "session_id": "sess-abc-001"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T00:18:45.123Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Login failed for user john.doe@example.com from IP 203.0.113.42 - invalid password",
+    "metadata": {
+      "request_id": "req-003",
+      "correlation_id": "corr-auth-001",
+      "user_email": "john.doe@example.com",
+      "source_ip": "203.0.113.42",
+      "attempt_count": 3
+    }
+  },
+  {
+    "timestamp": "2025-01-08T00:22:11.567Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/users - 200 OK",
+    "metadata": {
+      "request_id": "req-004",
+      "endpoint": "/api/v1/users",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 45
+    }
+  },
+  {
+    "timestamp": "2025-01-08T00:35:28.234Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache miss for key: user_profile_12345",
+    "metadata": {
+      "request_id": "req-005",
+      "cache_key": "user_profile_12345",
+      "duration_ms": 120
+    }
+  },
+  {
+    "timestamp": "2025-01-08T01:02:15.890Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Query executed successfully: SELECT * FROM users WHERE email = 'sarah.smith@gmail.com'",
+    "metadata": {
+      "request_id": "req-006",
+      "query_type": "SELECT",
+      "table": "users",
+      "duration_ms": 25
+    }
+  },
+  {
+    "timestamp": "2025-01-08T01:15:42.345Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Login failed for user bob.wilson@company.com from IP 192.168.2.100 - invalid password",
+    "metadata": {
+      "request_id": "req-007",
+      "user_email": "bob.wilson@company.com",
+      "source_ip": "192.168.2.100",
+      "attempt_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T01:18:50.678Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Login failed for user bob.wilson@company.com from IP 192.168.2.100 - invalid password",
+    "metadata": {
+      "request_id": "req-008",
+      "user_email": "bob.wilson@company.com",
+      "source_ip": "192.168.2.100",
+      "attempt_count": 2
+    }
+  },
+  {
+    "timestamp": "2025-01-08T01:19:12.901Z",
+    "level": "WARNING",
+    "component": "authentication-service",
+    "message": "Account locked after 5 failed attempts: user charlie.brown@test.com",
+    "metadata": {
+      "request_id": "req-009",
+      "user_email": "charlie.brown@test.com",
+      "source_ip": "172.16.0.50",
+      "locked": true
+    }
+  },
+  {
+    "timestamp": "2025-01-08T02:10:23.456Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Background job completed: send_notifications - 1250 emails sent",
+    "metadata": {
+      "request_id": "req-010",
+      "job_type": "send_notifications",
+      "items_processed": 1250,
+      "duration_ms": 45000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T02:45:34.789Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Cache hit for key: user_profile_67890",
+    "metadata": {
+      "request_id": "req-011",
+      "cache_key": "user_profile_67890",
+      "duration_ms": 2
+    }
+  },
+  {
+    "timestamp": "2025-01-08T03:12:45.123Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "Rate limit approaching: 450/500 requests for API key xyz-789",
+    "metadata": {
+      "request_id": "req-012",
+      "api_key": "xyz-789",
+      "current_rate": 450,
+      "max_rate": 500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T03:15:22.567Z",
+    "level": "ERROR",
+    "component": "api-gateway",
+    "message": "Client 192.168.1.100 exceeded rate limit (1000 req/min)",
+    "metadata": {
+      "request_id": "req-013",
+      "source_ip": "192.168.1.100",
+      "rate_limit": 1000,
+      "actual_rate": 1234
+    }
+  },
+  {
+    "timestamp": "2025-01-08T04:20:11.234Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "File upload initiated by user diana.martinez@example.com",
+    "metadata": {
+      "request_id": "req-014",
+      "user_email": "diana.martinez@example.com",
+      "filename": "document.pdf",
+      "filesize_kb": 2048
+    }
+  },
+  {
+    "timestamp": "2025-01-08T04:22:45.890Z",
+    "level": "WARNING",
+    "component": "file-processor",
+    "message": "Disk space warning: 95% of 500GB used",
+    "metadata": {
+      "request_id": "req-015",
+      "disk_used_percent": 95,
+      "disk_total_gb": 500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T04:23:12.345Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "File upload failed: /tmp/upload_diana.martinez@example.com_document.pdf - disk full",
+    "metadata": {
+      "request_id": "req-016",
+      "correlation_id": "corr-file-001",
+      "user_email": "diana.martinez@example.com",
+      "error": "disk_full"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T05:10:23.678Z",
+    "level": "INFO",
+    "component": "network-monitor",
+    "message": "Network latency check passed: avg 25ms to api.payments.com",
+    "metadata": {
+      "request_id": "req-017",
+      "target": "api.payments.com",
+      "latency_ms": 25
+    }
+  },
+  {
+    "timestamp": "2025-01-08T06:15:34.901Z",
+    "level": "ERROR",
+    "component": "network-monitor",
+    "message": "Connection timeout to external service api.payments.com",
+    "metadata": {
+      "request_id": "req-018",
+      "target": "api.payments.com",
+      "timeout_ms": 5000,
+      "error": "connection_timeout"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T06:18:45.234Z",
+    "level": "ERROR",
+    "component": "network-monitor",
+    "message": "DNS resolution failed for hostname internal.service.local",
+    "metadata": {
+      "request_id": "req-019",
+      "correlation_id": "corr-net-001",
+      "hostname": "internal.service.local",
+      "error": "dns_resolution_failed"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T07:05:12.567Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for emily.davis@company.com from 10.0.2.75",
+    "metadata": {
+      "request_id": "req-020",
+      "user_email": "emily.davis@company.com",
+      "source_ip": "10.0.2.75",
+      "session_id": "sess-abc-002"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T07:22:23.890Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Payment processed successfully for order ORD-123456",
+    "metadata": {
+      "request_id": "req-021",
+      "order_id": "ORD-123456",
+      "amount_usd": 149.99,
+      "duration_ms": 350
+    }
+  },
+  {
+    "timestamp": "2025-01-08T07:35:45.123Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Slow query detected: 2.5s for SELECT on transactions table",
+    "metadata": {
+      "request_id": "req-022",
+      "query_type": "SELECT",
+      "table": "transactions",
+      "duration_ms": 2500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:10:12.456Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: POST /api/v1/orders - 201 Created",
+    "metadata": {
+      "request_id": "req-023",
+      "endpoint": "/api/v1/orders",
+      "method": "POST",
+      "status_code": 201,
+      "duration_ms": 123
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:25:34.789Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Invalid JWT token for user frank.miller@example.com",
+    "metadata": {
+      "request_id": "req-024",
+      "user_email": "frank.miller@example.com",
+      "error": "invalid_token"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:45:22.345Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache invalidated for pattern: user_*",
+    "metadata": {
+      "request_id": "req-025",
+      "pattern": "user_*",
+      "keys_invalidated": 1234
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:10:11.678Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Data backup job started",
+    "metadata": {
+      "request_id": "req-026",
+      "job_type": "backup",
+      "backup_size_gb": 125
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:30:45.901Z",
+    "level": "CRITICAL",
+    "component": "database-connector",
+    "message": "Database connection pool exhausted - max connections: 50",
+    "metadata": {
+      "request_id": "req-027",
+      "correlation_id": "corr-db-001",
+      "current_connections": 50,
+      "max_connections": 50,
+      "error": "pool_exhausted"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:31:12.234Z",
+    "level": "ERROR",
+    "component": "database-connector",
+    "message": "Database write timeout after 30s for transaction txn-xyz-789",
+    "metadata": {
+      "request_id": "req-028",
+      "correlation_id": "corr-db-001",
+      "transaction_id": "txn-xyz-789",
+      "timeout_ms": 30000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:35:23.567Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Connection pool restored, active connections: 35/50",
+    "metadata": {
+      "request_id": "req-029",
+      "correlation_id": "corr-db-001",
+      "active_connections": 35,
+      "max_connections": 50
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:45:34.890Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for grace.lee@gmail.com from 172.16.1.20",
+    "metadata": {
+      "request_id": "req-030",
+      "user_email": "grace.lee@gmail.com",
+      "source_ip": "172.16.1.20",
+      "session_id": "sess-abc-003"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:05:12.123Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/products - 200 OK",
+    "metadata": {
+      "request_id": "req-031",
+      "endpoint": "/api/v1/products",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 67
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:15:45.456Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Failed login attempt for user henry.clark@test.com from 203.0.113.100",
+    "metadata": {
+      "request_id": "req-032",
+      "correlation_id": "corr-auth-002",
+      "user_email": "henry.clark@test.com",
+      "source_ip": "203.0.113.100",
+      "attempt_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:15:48.789Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Failed login attempt for user isabel.garcia@example.com from 203.0.113.100",
+    "metadata": {
+      "request_id": "req-033",
+      "correlation_id": "corr-auth-002",
+      "user_email": "isabel.garcia@example.com",
+      "source_ip": "203.0.113.100",
+      "attempt_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:15:51.345Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Failed login attempt for user jennifer.white@company.com from 203.0.113.100",
+    "metadata": {
+      "request_id": "req-034",
+      "correlation_id": "corr-auth-002",
+      "user_email": "jennifer.white@company.com",
+      "source_ip": "203.0.113.100",
+      "attempt_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:15:54.678Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Failed login attempt for user kevin.rodriguez@test.com from 203.0.113.100",
+    "metadata": {
+      "request_id": "req-035",
+      "correlation_id": "corr-auth-002",
+      "user_email": "kevin.rodriguez@test.com",
+      "source_ip": "203.0.113.100",
+      "attempt_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:15:57.901Z",
+    "level": "CRITICAL",
+    "component": "authentication-service",
+    "message": "Potential brute force attack detected from 203.0.113.100 - 15 failed attempts in 30 seconds",
+    "metadata": {
+      "request_id": "req-036",
+      "correlation_id": "corr-auth-002",
+      "source_ip": "203.0.113.100",
+      "failed_attempts": 15,
+      "time_window_s": 30,
+      "action": "ip_blocked"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:22:34.234Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Payment processed successfully for order ORD-789012",
+    "metadata": {
+      "request_id": "req-037",
+      "order_id": "ORD-789012",
+      "amount_usd": 299.99,
+      "duration_ms": 425
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:35:45.567Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache hit for key: product_catalog_2025",
+    "metadata": {
+      "request_id": "req-038",
+      "cache_key": "product_catalog_2025",
+      "duration_ms": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:50:12.890Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "High request volume detected: 2500 req/min for endpoint /api/v1/search",
+    "metadata": {
+      "request_id": "req-039",
+      "endpoint": "/api/v1/search",
+      "current_rate": 2500,
+      "threshold": 2000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:05:23.123Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Data backup job completed successfully - 125GB backed up",
+    "metadata": {
+      "request_id": "req-040",
+      "job_type": "backup",
+      "backup_size_gb": 125,
+      "duration_ms": 3600000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:20:34.456Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for laura.martinez@gmail.com from 10.0.3.45",
+    "metadata": {
+      "request_id": "req-041",
+      "user_email": "laura.martinez@gmail.com",
+      "source_ip": "10.0.3.45",
+      "session_id": "sess-abc-004"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:35:45.789Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: PUT /api/v1/users/12345 - 200 OK",
+    "metadata": {
+      "request_id": "req-042",
+      "endpoint": "/api/v1/users/12345",
+      "method": "PUT",
+      "status_code": 200,
+      "duration_ms": 89
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:50:12.345Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Memory usage high: 85% of 16GB",
+    "metadata": {
+      "request_id": "req-043",
+      "memory_used_percent": 85,
+      "memory_total_gb": 16
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:10:23.678Z",
+    "level": "ERROR",
+    "component": "payment-processor",
+    "message": "Payment declined for order ORD-345678 - insufficient funds",
+    "metadata": {
+      "request_id": "req-044",
+      "order_id": "ORD-345678",
+      "amount_usd": 499.99,
+      "error": "insufficient_funds"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:25:34.901Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "File processed successfully: report_2025_Q1.xlsx",
+    "metadata": {
+      "request_id": "req-045",
+      "filename": "report_2025_Q1.xlsx",
+      "filesize_kb": 1024,
+      "duration_ms": 2500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:40:45.234Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Password reset requested for user michael.johnson@company.com, notification sent to +1-555-123-4567",
+    "metadata": {
+      "request_id": "req-046",
+      "user_email": "michael.johnson@company.com",
+      "phone": "+1-555-123-4567",
+      "reset_token": "rst-abc-001"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:05:12.567Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: DELETE /api/v1/sessions/sess-xyz - 204 No Content",
+    "metadata": {
+      "request_id": "req-047",
+      "endpoint": "/api/v1/sessions/sess-xyz",
+      "method": "DELETE",
+      "status_code": 204,
+      "duration_ms": 45
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:20:23.890Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Query performance degraded: 1.8s for INSERT on orders table",
+    "metadata": {
+      "request_id": "req-048",
+      "query_type": "INSERT",
+      "table": "orders",
+      "duration_ms": 1800
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:35:34.123Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for nancy.taylor@test.com from 192.168.5.100",
+    "metadata": {
+      "request_id": "req-049",
+      "user_email": "nancy.taylor@test.com",
+      "source_ip": "192.168.5.100",
+      "session_id": "sess-abc-005"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:50:45.456Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache warmed up with 5000 product entries",
+    "metadata": {
+      "request_id": "req-050",
+      "entries_cached": 5000,
+      "duration_ms": 15000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:10:12.789Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "Failed to process file: corrupted_data.csv - invalid format",
+    "metadata": {
+      "request_id": "req-051",
+      "filename": "corrupted_data.csv",
+      "error": "invalid_format"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:25:23.345Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Payment processed successfully for order ORD-456789",
+    "metadata": {
+      "request_id": "req-052",
+      "order_id": "ORD-456789",
+      "amount_usd": 79.99,
+      "duration_ms": 310
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:40:34.678Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/analytics - 200 OK",
+    "metadata": {
+      "request_id": "req-053",
+      "endpoint": "/api/v1/analytics",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 156
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:55:45.901Z",
+    "level": "WARNING",
+    "component": "network-monitor",
+    "message": "Increased latency detected: avg 150ms to api.payments.com",
+    "metadata": {
+      "request_id": "req-054",
+      "target": "api.payments.com",
+      "latency_ms": 150,
+      "threshold_ms": 100
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:10:12.234Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for oliver.anderson@gmail.com from 172.16.2.50",
+    "metadata": {
+      "request_id": "req-055",
+      "user_email": "oliver.anderson@gmail.com",
+      "source_ip": "172.16.2.50",
+      "session_id": "sess-abc-006"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:25:23.567Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Report generation job started for user patricia.thomas@company.com",
+    "metadata": {
+      "request_id": "req-056",
+      "user_email": "patricia.thomas@company.com",
+      "job_type": "report_generation",
+      "report_type": "monthly_sales"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:40:34.890Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache hit for key: sales_data_2025_01",
+    "metadata": {
+      "request_id": "req-057",
+      "cache_key": "sales_data_2025_01",
+      "duration_ms": 2
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:55:45.123Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "Rate limit approaching: 480/500 requests for API key abc-456",
+    "metadata": {
+      "request_id": "req-058",
+      "api_key": "abc-456",
+      "current_rate": 480,
+      "max_rate": 500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:10:12.456Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Refund processed successfully for order ORD-123456",
+    "metadata": {
+      "request_id": "req-059",
+      "order_id": "ORD-123456",
+      "amount_usd": 149.99,
+      "duration_ms": 280
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:25:23.789Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Session expired for user quincy.roberts@example.com",
+    "metadata": {
+      "request_id": "req-060",
+      "user_email": "quincy.roberts@example.com",
+      "session_id": "sess-xyz-001",
+      "error": "session_expired"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:40:34.345Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: POST /api/v1/feedback - 201 Created",
+    "metadata": {
+      "request_id": "req-061",
+      "endpoint": "/api/v1/feedback",
+      "method": "POST",
+      "status_code": 201,
+      "duration_ms": 92
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:55:45.678Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database health check passed",
+    "metadata": {
+      "request_id": "req-062",
+      "active_connections": 28,
+      "max_connections": 50,
+      "duration_ms": 15
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:10:12.901Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Two-factor authentication code sent to phone (555) 987-6543 for user rachel.walker@test.com",
+    "metadata": {
+      "request_id": "req-063",
+      "user_email": "rachel.walker@test.com",
+      "phone": "(555) 987-6543",
+      "code_sent": true
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:25:23.234Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "File upload completed for user samuel.hill@company.com: invoice_2025_01.pdf",
+    "metadata": {
+      "request_id": "req-064",
+      "user_email": "samuel.hill@company.com",
+      "filename": "invoice_2025_01.pdf",
+      "filesize_kb": 512
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:40:34.567Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache eviction triggered: 10000 LRU entries removed",
+    "metadata": {
+      "request_id": "req-065",
+      "evicted_entries": 10000,
+      "reason": "memory_pressure"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:55:45.890Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Report generation job completed for user patricia.thomas@company.com",
+    "metadata": {
+      "request_id": "req-066",
+      "user_email": "patricia.thomas@company.com",
+      "job_type": "report_generation",
+      "duration_ms": 9000000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:10:12.123Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for teresa.green@gmail.com from 10.0.4.30",
+    "metadata": {
+      "request_id": "req-067",
+      "user_email": "teresa.green@gmail.com",
+      "source_ip": "10.0.4.30",
+      "session_id": "sess-abc-007"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:25:23.456Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/notifications - 200 OK",
+    "metadata": {
+      "request_id": "req-068",
+      "endpoint": "/api/v1/notifications",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 73
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:40:34.789Z",
+    "level": "ERROR",
+    "component": "payment-processor",
+    "message": "Payment gateway timeout for order ORD-901234",
+    "metadata": {
+      "request_id": "req-069",
+      "order_id": "ORD-901234",
+      "amount_usd": 199.99,
+      "timeout_ms": 10000,
+      "error": "gateway_timeout"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:55:45.345Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Replication lag detected: 5 seconds behind primary",
+    "metadata": {
+      "request_id": "req-070",
+      "lag_seconds": 5,
+      "threshold_seconds": 3
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:10:12.678Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Password changed successfully for user ursula.baker@example.com",
+    "metadata": {
+      "request_id": "req-071",
+      "user_email": "ursula.baker@example.com",
+      "source_ip": "192.168.7.50"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:25:23.901Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache hit for key: user_preferences_98765",
+    "metadata": {
+      "request_id": "req-072",
+      "cache_key": "user_preferences_98765",
+      "duration_ms": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:40:34.234Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "WebSocket connection established for user victor.nelson@test.com",
+    "metadata": {
+      "request_id": "req-073",
+      "user_email": "victor.nelson@test.com",
+      "connection_id": "ws-conn-001"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:55:45.567Z",
+    "level": "WARNING",
+    "component": "network-monitor",
+    "message": "SSL certificate expiring in 30 days for domain api.example.com",
+    "metadata": {
+      "request_id": "req-074",
+      "domain": "api.example.com",
+      "days_until_expiry": 30
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:10:12.890Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Payment processed successfully for order ORD-567890",
+    "metadata": {
+      "request_id": "req-075",
+      "order_id": "ORD-567890",
+      "amount_usd": 599.99,
+      "duration_ms": 395
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:25:23.123Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "File validation passed for contract_2025.pdf uploaded by wendy.carter@company.com",
+    "metadata": {
+      "request_id": "req-076",
+      "user_email": "wendy.carter@company.com",
+      "filename": "contract_2025.pdf",
+      "filesize_kb": 3072
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:40:34.456Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for xavier.murphy@gmail.com from 172.16.3.75",
+    "metadata": {
+      "request_id": "req-077",
+      "user_email": "xavier.murphy@gmail.com",
+      "source_ip": "172.16.3.75",
+      "session_id": "sess-abc-008"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:55:45.789Z",
+    "level": "ERROR",
+    "component": "api-gateway",
+    "message": "Request body too large: 15MB exceeds 10MB limit",
+    "metadata": {
+      "request_id": "req-078",
+      "body_size_mb": 15,
+      "limit_mb": 10,
+      "error": "payload_too_large"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:10:12.345Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Cleanup job completed: deleted 5000 expired sessions",
+    "metadata": {
+      "request_id": "req-079",
+      "job_type": "cleanup",
+      "items_deleted": 5000,
+      "duration_ms": 60000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:25:23.678Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Memory usage critical: 95% of 16GB",
+    "metadata": {
+      "request_id": "req-080",
+      "memory_used_percent": 95,
+      "memory_total_gb": 16
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:40:34.901Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Email verification sent to yolanda.rivera@test.com, code valid for 15 minutes",
+    "metadata": {
+      "request_id": "req-081",
+      "user_email": "yolanda.rivera@test.com",
+      "verification_code": "VRF-123",
+      "valid_for_minutes": 15
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:55:45.234Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: PATCH /api/v1/settings - 200 OK",
+    "metadata": {
+      "request_id": "req-082",
+      "endpoint": "/api/v1/settings",
+      "method": "PATCH",
+      "status_code": 200,
+      "duration_ms": 54
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:10:12.567Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Index optimization completed for users table",
+    "metadata": {
+      "request_id": "req-083",
+      "table": "users",
+      "indexes_optimized": 3,
+      "duration_ms": 120000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:25:23.890Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "Virus detected in file upload: suspicious_file.exe from user zachary.cooper@example.com",
+    "metadata": {
+      "request_id": "req-084",
+      "user_email": "zachary.cooper@example.com",
+      "filename": "suspicious_file.exe",
+      "threat_type": "trojan",
+      "action": "quarantined"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:40:34.123Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "Unusual traffic pattern detected from 198.51.100.50",
+    "metadata": {
+      "request_id": "req-085",
+      "source_ip": "198.51.100.50",
+      "requests_per_minute": 5000,
+      "normal_rate": 100
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:55:45.456Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Daily settlement completed: 145 transactions totaling $45,678.90",
+    "metadata": {
+      "request_id": "req-086",
+      "transaction_count": 145,
+      "total_amount_usd": 45678.90,
+      "duration_ms": 30000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:10:12.789Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Log rotation completed: archived 50GB of logs",
+    "metadata": {
+      "request_id": "req-087",
+      "job_type": "log_rotation",
+      "archived_size_gb": 50,
+      "duration_ms": 180000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:25:23.345Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Account created successfully for user contact_support@company.com, confirmation sent to +44 20 1234 5678",
+    "metadata": {
+      "request_id": "req-088",
+      "user_email": "contact_support@company.com",
+      "phone": "+44 20 1234 5678",
+      "account_id": "ACC-123456"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:40:34.678Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Nightly cache refresh started",
+    "metadata": {
+      "request_id": "req-089",
+      "cache_entries": 15000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:55:45.901Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Daily metrics summary: 125,000 requests processed, avg latency 45ms",
+    "metadata": {
+      "request_id": "req-090",
+      "total_requests": 125000,
+      "avg_latency_ms": 45,
+      "error_rate_percent": 0.5
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:12:34.567Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/inventory - 200 OK",
+    "metadata": {
+      "request_id": "req-091",
+      "endpoint": "/api/v1/inventory",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 112
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:28:45.234Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database migration completed: added column 'phone_verified' to users table",
+    "metadata": {
+      "request_id": "req-092",
+      "table": "users",
+      "migration": "add_phone_verified_column",
+      "duration_ms": 5000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T08:42:12.678Z",
+    "level": "WARNING",
+    "component": "payment-processor",
+    "message": "Payment retry attempted for order ORD-234567 after initial failure",
+    "metadata": {
+      "request_id": "req-093",
+      "order_id": "ORD-234567",
+      "amount_usd": 89.99,
+      "retry_count": 1
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:05:34.901Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for admin@company.com from 10.0.10.5",
+    "metadata": {
+      "request_id": "req-094",
+      "user_email": "admin@company.com",
+      "source_ip": "10.0.10.5",
+      "session_id": "sess-abc-009",
+      "is_admin": true
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:18:45.123Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache preloaded with frequently accessed data: 2500 entries",
+    "metadata": {
+      "request_id": "req-095",
+      "entries_loaded": 2500,
+      "duration_ms": 8000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:32:12.456Z",
+    "level": "ERROR",
+    "component": "network-monitor",
+    "message": "Network packet loss detected: 5% loss on interface eth0",
+    "metadata": {
+      "request_id": "req-096",
+      "interface": "eth0",
+      "packet_loss_percent": 5,
+      "threshold_percent": 2
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:45:34.789Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "Batch file processing started: 150 files queued",
+    "metadata": {
+      "request_id": "req-097",
+      "job_type": "batch_processing",
+      "files_queued": 150
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:02:45.345Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Deadlock detected and resolved on transactions table",
+    "metadata": {
+      "request_id": "req-098",
+      "table": "transactions",
+      "transactions_affected": 2,
+      "resolution_time_ms": 150
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:18:12.678Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: POST /api/v1/webhooks - 200 OK",
+    "metadata": {
+      "request_id": "req-099",
+      "endpoint": "/api/v1/webhooks",
+      "method": "POST",
+      "status_code": 200,
+      "duration_ms": 234
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:35:23.901Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Subscription renewal processed for user support@example.com",
+    "metadata": {
+      "request_id": "req-100",
+      "user_email": "support@example.com",
+      "subscription_id": "SUB-789012",
+      "amount_usd": 29.99
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:52:34.234Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "OAuth token validation failed for provider Google",
+    "metadata": {
+      "request_id": "req-101",
+      "provider": "google",
+      "error": "token_expired"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:08:45.567Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Email campaign job started: 50,000 recipients",
+    "metadata": {
+      "request_id": "req-102",
+      "job_type": "email_campaign",
+      "recipient_count": 50000,
+      "campaign_id": "CMP-2025-01"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:25:12.890Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache fragmentation detected: 25% overhead",
+    "metadata": {
+      "request_id": "req-103",
+      "fragmentation_percent": 25,
+      "action": "defragmentation_scheduled"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:42:23.123Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Rate limit increased for premium API key premium-xyz-789",
+    "metadata": {
+      "request_id": "req-104",
+      "api_key": "premium-xyz-789",
+      "old_limit": 1000,
+      "new_limit": 5000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:05:34.456Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "Batch file processing completed: 150 files processed",
+    "metadata": {
+      "request_id": "req-105",
+      "job_type": "batch_processing",
+      "files_processed": 150,
+      "duration_ms": 4800000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:18:45.789Z",
+    "level": "ERROR",
+    "component": "database-connector",
+    "message": "Table lock timeout: waiting 30s for lock on orders table",
+    "metadata": {
+      "request_id": "req-106",
+      "table": "orders",
+      "timeout_ms": 30000,
+      "error": "lock_timeout"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:35:12.345Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Social login successful for user Angela Martinez via Facebook",
+    "metadata": {
+      "request_id": "req-107",
+      "user_name": "Angela Martinez",
+      "provider": "facebook",
+      "user_id": "usr-social-001"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:52:23.678Z",
+    "level": "WARNING",
+    "component": "network-monitor",
+    "message": "Bandwidth usage high: 800Mbps of 1Gbps capacity",
+    "metadata": {
+      "request_id": "req-108",
+      "current_bandwidth_mbps": 800,
+      "capacity_mbps": 1000,
+      "utilization_percent": 80
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:10:34.901Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Chargeback notification received for order ORD-901234",
+    "metadata": {
+      "request_id": "req-109",
+      "order_id": "ORD-901234",
+      "amount_usd": 199.99,
+      "reason": "customer_dispute"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:28:45.234Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "GraphQL query processed: getUserProfile - 200 OK",
+    "metadata": {
+      "request_id": "req-110",
+      "query": "getUserProfile",
+      "method": "POST",
+      "status_code": 200,
+      "duration_ms": 89
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:45:12.567Z",
+    "level": "CRITICAL",
+    "component": "cache-service",
+    "message": "Cache cluster node failure: redis-node-3 unresponsive",
+    "metadata": {
+      "request_id": "req-111",
+      "correlation_id": "corr-cache-001",
+      "node": "redis-node-3",
+      "cluster_size": 5,
+      "active_nodes": 4
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:48:23.890Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache failover initiated: traffic redirected to redis-node-4",
+    "metadata": {
+      "request_id": "req-112",
+      "correlation_id": "corr-cache-001",
+      "failed_node": "redis-node-3",
+      "failover_node": "redis-node-4"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:52:34.123Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache cluster stabilized: redis-node-3 rejoined cluster",
+    "metadata": {
+      "request_id": "req-113",
+      "correlation_id": "corr-cache-001",
+      "node": "redis-node-3",
+      "cluster_size": 5,
+      "active_nodes": 5
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:10:45.456Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Email campaign completed: 50,000 emails sent, 98.5% delivery rate",
+    "metadata": {
+      "request_id": "req-114",
+      "job_type": "email_campaign",
+      "emails_sent": 50000,
+      "delivery_rate_percent": 98.5,
+      "duration_ms": 10800000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:28:12.789Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User session started for Brian Cooper from 192.168.10.25",
+    "metadata": {
+      "request_id": "req-115",
+      "user_name": "Brian Cooper",
+      "source_ip": "192.168.10.25",
+      "session_id": "sess-abc-010"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:45:23.345Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "Slow endpoint detected: /api/v1/reports avg response time 2.5s",
+    "metadata": {
+      "request_id": "req-116",
+      "endpoint": "/api/v1/reports",
+      "avg_duration_ms": 2500,
+      "threshold_ms": 1000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:02:34.678Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database backup started: full backup of production database",
+    "metadata": {
+      "request_id": "req-117",
+      "backup_type": "full",
+      "database": "production",
+      "estimated_size_gb": 250
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:18:45.901Z",
+    "level": "ERROR",
+    "component": "payment-processor",
+    "message": "Card verification failed: invalid CVV for order ORD-678901",
+    "metadata": {
+      "request_id": "req-118",
+      "order_id": "ORD-678901",
+      "amount_usd": 399.99,
+      "error": "invalid_cvv"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:35:12.234Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "Image optimization completed for profile_pic.jpg uploaded by user Catherine Davis",
+    "metadata": {
+      "request_id": "req-119",
+      "user_name": "Catherine Davis",
+      "filename": "profile_pic.jpg",
+      "original_size_kb": 5120,
+      "optimized_size_kb": 512,
+      "compression_ratio": 10
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:52:23.567Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API versioning: deprecated endpoint /api/v1/legacy accessed",
+    "metadata": {
+      "request_id": "req-120",
+      "endpoint": "/api/v1/legacy",
+      "deprecation_date": "2025-03-01",
+      "replacement_endpoint": "/api/v2/users"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:10:34.890Z",
+    "level": "WARNING",
+    "component": "background-worker",
+    "message": "Job queue growing: 500 pending jobs",
+    "metadata": {
+      "request_id": "req-121",
+      "pending_jobs": 500,
+      "threshold": 300,
+      "action": "scaling_workers"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:28:45.123Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "API key created for user David Evans, key sent to (555) 234-5678",
+    "metadata": {
+      "request_id": "req-122",
+      "user_name": "David Evans",
+      "phone": "(555) 234-5678",
+      "api_key": "key-abc-def-123",
+      "permissions": ["read", "write"]
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:45:12.456Z",
+    "level": "ERROR",
+    "component": "network-monitor",
+    "message": "CDN edge server unreachable: cdn-us-east-1.example.com",
+    "metadata": {
+      "request_id": "req-123",
+      "server": "cdn-us-east-1.example.com",
+      "region": "us-east-1",
+      "error": "unreachable"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:02:23.789Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database backup completed successfully: 250GB backed up",
+    "metadata": {
+      "request_id": "req-124",
+      "backup_type": "full",
+      "database": "production",
+      "backup_size_gb": 250,
+      "duration_ms": 7200000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:18:34.345Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Currency conversion applied: 150.00 EUR to 162.50 USD for order ORD-112233",
+    "metadata": {
+      "request_id": "req-125",
+      "order_id": "ORD-112233",
+      "original_amount": 150.00,
+      "original_currency": "EUR",
+      "converted_amount": 162.50,
+      "converted_currency": "USD",
+      "exchange_rate": 1.0833
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:35:45.678Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "CORS preflight request from unauthorized origin: https://malicious-site.com",
+    "metadata": {
+      "request_id": "req-126",
+      "origin": "https://malicious-site.com",
+      "action": "blocked"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:52:12.901Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User account merged: old account USR-456 merged into USR-789 for user Elizabeth Foster",
+    "metadata": {
+      "request_id": "req-127",
+      "user_name": "Elizabeth Foster",
+      "old_account_id": "USR-456",
+      "new_account_id": "USR-789"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:10:23.234Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache statistics: 85% hit rate, 15% miss rate over last hour",
+    "metadata": {
+      "request_id": "req-128",
+      "hit_rate_percent": 85,
+      "miss_rate_percent": 15,
+      "total_requests": 125000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:28:34.567Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "Thumbnail generation failed for video_presentation.mp4: codec not supported",
+    "metadata": {
+      "request_id": "req-129",
+      "filename": "video_presentation.mp4",
+      "codec": "hevc",
+      "error": "unsupported_codec"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:45:45.890Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Analytics aggregation job completed: processed 1M events",
+    "metadata": {
+      "request_id": "req-130",
+      "job_type": "analytics_aggregation",
+      "events_processed": 1000000,
+      "duration_ms": 1800000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:02:12.123Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Connection pool utilization high: 45/50 connections active",
+    "metadata": {
+      "request_id": "req-131",
+      "active_connections": 45,
+      "max_connections": 50,
+      "utilization_percent": 90
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:18:23.456Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Load balancer health check passed for all backend servers",
+    "metadata": {
+      "request_id": "req-132",
+      "healthy_servers": 8,
+      "total_servers": 8,
+      "check_duration_ms": 50
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:35:34.789Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Role assigned to user Frank Garcia: promoted to 'moderator'",
+    "metadata": {
+      "request_id": "req-133",
+      "user_name": "Frank Garcia",
+      "old_role": "user",
+      "new_role": "moderator",
+      "assigned_by": "admin@company.com"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:52:45.345Z",
+    "level": "ERROR",
+    "component": "payment-processor",
+    "message": "Fraud detection triggered for transaction TXN-445566 from IP 198.51.100.75",
+    "metadata": {
+      "request_id": "req-134",
+      "transaction_id": "TXN-445566",
+      "source_ip": "198.51.100.75",
+      "amount_usd": 9999.99,
+      "fraud_score": 95,
+      "action": "blocked"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:10:12.678Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "Document indexing completed: 1500 documents indexed for search",
+    "metadata": {
+      "request_id": "req-135",
+      "documents_indexed": 1500,
+      "index_name": "documents_2025_01",
+      "duration_ms": 600000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:28:23.901Z",
+    "level": "WARNING",
+    "component": "network-monitor",
+    "message": "IPv6 connectivity degraded: 50% packet loss",
+    "metadata": {
+      "request_id": "req-136",
+      "protocol": "ipv6",
+      "packet_loss_percent": 50,
+      "threshold_percent": 10
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:45:34.234Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API documentation accessed: 2500 page views today",
+    "metadata": {
+      "request_id": "req-137",
+      "page_views": 2500,
+      "unique_visitors": 450,
+      "top_page": "/docs/authentication"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:02:45.567Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Biometric authentication enrolled for user Gloria Henderson via fingerprint",
+    "metadata": {
+      "request_id": "req-138",
+      "user_name": "Gloria Henderson",
+      "biometric_type": "fingerprint",
+      "device_id": "DEV-mobile-001"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:18:12.890Z",
+    "level": "ERROR",
+    "component": "database-connector",
+    "message": "Foreign key constraint violation on orders table: referenced user_id does not exist",
+    "metadata": {
+      "request_id": "req-139",
+      "table": "orders",
+      "constraint": "fk_orders_users",
+      "referenced_id": "usr-nonexistent-999",
+      "error": "foreign_key_violation"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:35:23.123Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Database vacuum job started: reclaiming disk space",
+    "metadata": {
+      "request_id": "req-140",
+      "job_type": "vacuum",
+      "estimated_duration_minutes": 60
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:52:34.456Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache key eviction rate high: 1000 keys/minute",
+    "metadata": {
+      "request_id": "req-141",
+      "eviction_rate_per_minute": 1000,
+      "threshold_per_minute": 500,
+      "reason": "memory_pressure"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:10:45.789Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Installment plan created for order ORD-334455: 6 monthly payments",
+    "metadata": {
+      "request_id": "req-142",
+      "order_id": "ORD-334455",
+      "total_amount_usd": 1200.00,
+      "installments": 6,
+      "monthly_payment_usd": 200.00
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:28:12.345Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "API request processed: GET /api/v1/metrics/realtime - 200 OK",
+    "metadata": {
+      "request_id": "req-143",
+      "endpoint": "/api/v1/metrics/realtime",
+      "method": "GET",
+      "status_code": 200,
+      "duration_ms": 145
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:45:23.678Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "Storage quota exceeded for user Henry Irving: 50GB limit reached",
+    "metadata": {
+      "request_id": "req-144",
+      "user_name": "Henry Irving",
+      "current_usage_gb": 50,
+      "quota_gb": 50,
+      "action": "upload_blocked"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:02:34.901Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Security audit log exported for compliance: 50,000 events",
+    "metadata": {
+      "request_id": "req-145",
+      "events_exported": 50000,
+      "date_range": "2025-01-01 to 2025-01-08",
+      "export_format": "json"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:18:45.234Z",
+    "level": "WARNING",
+    "component": "network-monitor",
+    "message": "TLS handshake failures increased: 50 failures in last 5 minutes",
+    "metadata": {
+      "request_id": "req-146",
+      "failure_count": 50,
+      "time_window_minutes": 5,
+      "threshold": 10
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:35:12.567Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Read replica synchronized: lag reduced to 0.5 seconds",
+    "metadata": {
+      "request_id": "req-147",
+      "replica": "db-read-replica-2",
+      "lag_seconds": 0.5,
+      "replication_status": "healthy"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:52:23.890Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "System health report generated: all services operational",
+    "metadata": {
+      "request_id": "req-148",
+      "services_checked": 15,
+      "services_healthy": 15,
+      "overall_status": "healthy"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:32:15.123Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Middleware chain executed successfully for request",
+    "metadata": {
+      "request_id": "req-149",
+      "middlewares": ["auth", "ratelimit", "logging"],
+      "total_duration_ms": 15
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:48:34.567Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User Irene Jackson updated profile: added recovery email backup@example.com",
+    "metadata": {
+      "request_id": "req-150",
+      "user_name": "Irene Jackson",
+      "recovery_email": "backup@example.com"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:12:45.890Z",
+    "level": "WARNING",
+    "component": "payment-processor",
+    "message": "Payment method expiring soon for 250 users: cards expire in 30 days",
+    "metadata": {
+      "request_id": "req-151",
+      "users_affected": 250,
+      "days_until_expiry": 30,
+      "notification_sent": true
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:25:12.234Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache cluster rebalanced: data redistributed across nodes",
+    "metadata": {
+      "request_id": "req-152",
+      "nodes": 5,
+      "keys_redistributed": 50000,
+      "duration_ms": 30000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:42:23.678Z",
+    "level": "ERROR",
+    "component": "api-gateway",
+    "message": "WebSocket connection dropped: client timeout after 60s inactivity",
+    "metadata": {
+      "request_id": "req-153",
+      "connection_id": "ws-conn-002",
+      "inactive_seconds": 60,
+      "error": "client_timeout"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:05:34.345Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "Duplicate file detected: document_final_v2.pdf matches existing file",
+    "metadata": {
+      "request_id": "req-154",
+      "filename": "document_final_v2.pdf",
+      "duplicate_of": "document_final.pdf",
+      "hash": "sha256-abc123...",
+      "action": "skipped"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:18:45.789Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Sitemap generation completed: 25,000 URLs indexed",
+    "metadata": {
+      "request_id": "req-155",
+      "job_type": "sitemap_generation",
+      "urls_indexed": 25000,
+      "output_file": "sitemap_2025_01_08.xml"
+    }
+  },
+  {
+    "timestamp": "2025-01-08\"21:32:12.456Z",
+    "level": "CRITICAL",
+    "component": "network-monitor",
+    "message": "DDoS attack detected: 100,000 req/s from 500 unique IPs",
+    "metadata": {
+      "request_id": "req-156",
+      "correlation_id": "corr-ddos-001",
+      "requests_per_second": 100000,
+      "unique_ips": 500,
+      "normal_rate": 1000,
+      "action": "rate_limiting_enabled"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:35:23.890Z",
+    "level": "WARNING",
+    "component": "api-gateway",
+    "message": "Emergency rate limiting activated: 100 req/s per IP",
+    "metadata": {
+      "request_id": "req-157",
+      "correlation_id": "corr-ddos-001",
+      "rate_limit_per_ip": 100,
+      "duration_minutes": 30
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:42:34.234Z",
+    "level": "INFO",
+    "component": "network-monitor",
+    "message": "DDoS mitigation successful: traffic normalized",
+    "metadata": {
+      "request_id": "req-158",
+      "correlation_id": "corr-ddos-001",
+      "current_requests_per_second": 1200,
+      "normal_rate": 1000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:05:45.567Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User preferences synchronized across devices for user contact@simployer.com",
+    "metadata": {
+      "request_id": "req-159",
+      "user_email": "contact@simployer.com",
+      "devices_synced": 3,
+      "sync_size_kb": 128
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:15:12.890Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database vacuum job completed: reclaimed 25GB disk space",
+    "metadata": {
+      "request_id": "req-160",
+      "job_type": "vacuum",
+      "space_reclaimed_gb": 25,
+      "duration_ms": 3600000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:45:23.123Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "End of day summary: 150,000 requests processed successfully",
+    "metadata": {
+      "request_id": "req-161",
+      "total_requests": 150000,
+      "successful_requests": 147500,
+      "failed_requests": 2500,
+      "success_rate_percent": 98.3,
+      "avg_response_time_ms": 52
+    }
+  },
+  {
+    "timestamp": "2025-01-08T07:42:18.456Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User Julia Kim logged in successfully from 10.0.5.88",
+    "metadata": {
+      "request_id": "req-162",
+      "user_name": "Julia Kim",
+      "source_ip": "10.0.5.88",
+      "session_id": "sess-abc-011"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T11:28:45.789Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Gift card redeemed: $50 applied to order ORD-556677 for user Kevin Lopez",
+    "metadata": {
+      "request_id": "req-163",
+      "user_name": "Kevin Lopez",
+      "order_id": "ORD-556677",
+      "gift_card_code": "GC-2025-ABC",
+      "amount_usd": 50.00
+    }
+  },
+  {
+    "timestamp": "2025-01-08T15:12:34.234Z",
+    "level": "INFO",
+    "component": "file-processor",
+    "message": "PDF conversion completed: presentation.pptx converted to PDF",
+    "metadata": {
+      "request_id": "req-164",
+      "input_file": "presentation.pptx",
+      "output_file": "presentation.pdf",
+      "pages": 45,
+      "duration_ms": 8000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T18:35:12.567Z",
+    "level": "WARNING",
+    "component": "database-connector",
+    "message": "Table bloat detected: orders table has 30% dead tuples",
+    "metadata": {
+      "request_id": "req-165",
+      "table": "orders",
+      "dead_tuples_percent": 30,
+      "action": "vacuum_recommended"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:52:23.890Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "User Linda Moore requested data export under GDPR",
+    "metadata": {
+      "request_id": "req-166",
+      "user_name": "Linda Moore",
+      "request_type": "gdpr_data_export",
+      "status": "processing"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T22:18:34.123Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "New API version released: v2.1.0 with improved performance",
+    "metadata": {
+      "request_id": "req-167",
+      "version": "v2.1.0",
+      "release_notes_url": "/docs/release-notes/v2.1.0",
+      "backwards_compatible": true
+    }
+  },
+  {
+    "timestamp": "2025-01-08T09:38:45.678Z",
+    "level": "INFO",
+    "component": "cache-service",
+    "message": "Cache warm-up completed for morning traffic surge",
+    "metadata": {
+      "request_id": "req-168",
+      "keys_loaded": 15000,
+      "duration_ms": 45000,
+      "hit_rate_improvement_percent": 12
+    }
+  },
+  {
+    "timestamp": "2025-01-08T13:22:12.345Z",
+    "level": "ERROR",
+    "component": "authentication-service",
+    "message": "Login attempt from suspicious location for user Martin Nelson: IP 203.0.113.200 (Russia) - user typically logs in from US",
+    "metadata": {
+      "request_id": "req-169",
+      "user_name": "Martin Nelson",
+      "source_ip": "203.0.113.200",
+      "geo_location": "Russia",
+      "typical_location": "United States",
+      "action": "additional_verification_required"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T16:48:23.789Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "Loyalty points awarded: 500 points to user Nancy Owens for purchase ORD-778899",
+    "metadata": {
+      "request_id": "req-170",
+      "user_name": "Nancy Owens",
+      "order_id": "ORD-778899",
+      "points_awarded": 500,
+      "total_points": 12500
+    }
+  },
+  {
+    "timestamp": "2025-01-08T19:25:34.456Z",
+    "level": "WARNING",
+    "component": "file-processor",
+    "message": "Large file upload in progress: 5GB file from user Oscar Peterson",
+    "metadata": {
+      "request_id": "req-171",
+      "user_name": "Oscar Peterson",
+      "filename": "backup_archive.zip",
+      "filesize_gb": 5,
+      "upload_progress_percent": 45
+    }
+  },
+  {
+    "timestamp": "2025-01-08T21:42:45.234Z",
+    "level": "INFO",
+    "component": "background-worker",
+    "message": "Search index optimization completed: query performance improved by 25%",
+    "metadata": {
+      "request_id": "req-172",
+      "job_type": "search_optimization",
+      "performance_improvement_percent": 25,
+      "duration_ms": 1800000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T07:55:12.567Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "Morning traffic peak starting: request rate increased to 2000 req/min",
+    "metadata": {
+      "request_id": "req-173",
+      "requests_per_minute": 2000,
+      "typical_rate": 500,
+      "auto_scaling": "triggered"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T12:08:34.890Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Bulk user import completed: 1000 new users added by admin Peter Quinn",
+    "metadata": {
+      "request_id": "req-174",
+      "admin_name": "Peter Quinn",
+      "users_imported": 1000,
+      "duration_ms": 120000
+    }
+  },
+  {
+    "timestamp": "2025-01-08T17:32:45.123Z",
+    "level": "WARNING",
+    "component": "cache-service",
+    "message": "Cache stampede detected for key: viral_content_12345",
+    "metadata": {
+      "request_id": "req-175",
+      "cache_key": "viral_content_12345",
+      "concurrent_requests": 5000,
+      "action": "cache_lock_applied"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T20:15:12.456Z",
+    "level": "INFO",
+    "component": "database-connector",
+    "message": "Database connection pool auto-scaled: increased from 50 to 75 connections",
+    "metadata": {
+      "request_id": "req-176",
+      "old_max_connections": 50,
+      "new_max_connections": 75,
+      "reason": "high_demand"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:28:23.789Z",
+    "level": "INFO",
+    "component": "payment-processor",
+    "message": "End of day reconciliation completed: all transactions balanced",
+    "metadata": {
+      "request_id": "req-177",
+      "transactions_processed": 1250,
+      "total_amount_usd": 187456.78,
+      "discrepancies": 0,
+      "status": "balanced"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T10:42:34.345Z",
+    "level": "INFO",
+    "component": "authentication-service",
+    "message": "Account deletion request processed for user Rita Sanders per GDPR right to erasure",
+    "metadata": {
+      "request_id": "req-178",
+      "user_name": "Rita Sanders",
+      "request_type": "gdpr_right_to_erasure",
+      "data_retention_days": 30,
+      "status": "scheduled_for_deletion"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T14:55:45.678Z",
+    "level": "ERROR",
+    "component": "file-processor",
+    "message": "File scan detected malware: trojan.exe uploaded by user Steve Taylor from 198.51.100.100",
+    "metadata": {
+      "request_id": "req-179",
+      "user_name": "Steve Taylor",
+      "source_ip": "198.51.100.100",
+      "filename": "trojan.exe",
+      "malware_type": "trojan",
+      "action": "file_quarantined_user_notified"
+    }
+  },
+  {
+    "timestamp": "2025-01-08T23:58:12.234Z",
+    "level": "INFO",
+    "component": "api-gateway",
+    "message": "System preparing for maintenance window: scheduled downtime at 02:00 UTC",
+    "metadata": {
+      "request_id": "req-180",
+      "maintenance_start": "2025-01-09T02:00:00Z",
+      "estimated_duration_minutes": 30,
+      "notification_sent": true
+    }
+  }
+]
