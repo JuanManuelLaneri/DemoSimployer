@@ -419,24 +419,24 @@ Phased approach to transition from demo to production:
 - Replace regex patterns with GPT-3.5-turbo NER
 - A/B test: 50% regex, 50% LLM
 - Measure: PII detection accuracy improvement
-- Cost: ~$50/month for typical usage
+
 
 **Phase 3: Analyzer Intelligence** (Week 3-4)
 - Add GPT-4 root cause analysis
 - Keep statistical analysis as baseline
 - Prompt engineering and tuning
-- Cost: ~$200/month
+
 
 **Phase 4: Generator Enhancement** (Week 5)
 - Add LLM-generated narrative reports
 - Keep matplotlib visualizations
-- Cost: ~$30/month
+
 
 **Phase 5: Optimization** (Week 6-8)
 - Implement caching layer
 - Progressive analysis (regex first, LLM if needed)
 - Model selection optimization
-- Target: 50% cost reduction while maintaining quality
+
 
 Each phase is independently deployable due to message-based architecture. Can roll back any phase without affecting others.
 
