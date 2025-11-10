@@ -77,3 +77,24 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Tests
+tests/
+
+# Analysis and temp files
+*.json
+!data/*.json
+!package.json
+!tsconfig.json
+output/
+temp_*.txt
+
+# Documentation (keep only README.md and DESIGN_DOCUMENT.md)
+AGENT_TO_AGENT_IMPLEMENTATION_ANALYSIS.md
+ARCHITECTURE.md
+DELIVERABLE_DESIGN.md
+MESSAGE_SCHEMAS.md
+ORCHESTRATION_FLOW.md
+SCALING_RELIABILITY_MCP.md
+STUDY_GUIDE.md
+SYSTEM_DESIGN.md
